@@ -20,7 +20,7 @@ Online verification of government-issued documents.
 - Face Recognition
 
 ## Images
-<img src="">
+<img src="GET STARTED">
 <img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp1.jpeg">
 <img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp2.jpeg">
 <img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp2b.jpeg">
