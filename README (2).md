@@ -21,10 +21,13 @@ Online verification of government-issued documents.
 
 ## Images
 <img src="GET STARTED">
-<img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp1.jpeg">
-<img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp2.jpeg">
-<img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp2b.jpeg">
-<img src="https://github.com/bhavya092/E-KYC/blob/main/screenshots/stp3.jpeg">
+<img src="LOGIN OR SIGNUP">
+<img src="LOGIN PAGE">
+<img src="SELFIE CAPTURE PAGE">
+<img src="IMPORTING SELFIE">
+<img src="SELECTING PHOTO">
+<img src="KYC VERIFICATION">
+
 
 ### Created for Standard Chartered GBS Campus Engagement Hackathon Event 2024 Hackthon by
 #### Team CLYCAT <br>
