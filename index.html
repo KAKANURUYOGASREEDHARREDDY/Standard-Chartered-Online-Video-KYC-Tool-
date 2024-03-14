@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Video KYC</title>
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        /* Custom CSS can be added here */
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">KYC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" onclick="display('section0')">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Account type
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">savings</a>
+                            <a class="dropdown-item" href="#">business</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">other</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">contact us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="welcome" id="section0">
+        <div class="hero">
+            <h1>Welcome to Online Video KYC</h1>
+            <p>An interactive and intuitive KYC process.</p>
+            <a href="#kyc-process" class="btn-get-started" id="get-started-btn" onclick="display('section1')">Get Started</a>
+        </div>
+    </div>
+
+    <div class="container" id="section1">
+        <h2>Login or Sign Up</h2>
+        <form id="login-form" onsubmit="display('section2'); return false;">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <button onclick="display('section2')" id="signup-link">Sign Up</button></p>
+    </div>
+    <div id="section2" class="module hidden">
+        <h2>Take Selfie</h2>
+        <input type="file" accept="image/*" capture="camera" id="selfie-input">
+        <button id="selfie-btn">Capture Selfie</button>
+        <img id="selfie-preview" alt="Selfie Preview" class="hidden">
+        <button id="retake-btn" class="hidden">Retake</button>
+        <button id="proceed-btn-selfie" class="hidden" onclick="display('section3')">Proceed next</button>
+    </div>
+
+    <div class="module hidden" id="section3">
+        <h2>KYC Verification</h2>
+        <form id="kyc-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <textarea id="address" placeholder="Address" required></textarea>
+            <input type="text" id="pan-aadhaar" placeholder="PAN Card / Aadhaar" required>
+            <input type="text" id="signature" placeholder="Signature" required>
+            <input type="text" id="income-range" placeholder="Income Range" required>
+            <select id="employment-type" required>
+                <option value="" disabled selected>Select Employment Type</option>
+                <option value="salaried">Salaried</option>
+                <option value="self-employed">Self Employed</option>
+                <option value="business">Business</option>
+                <option value="other">Other</option>
+            </select>
+            <video id="live-video" autoplay></video>
+            <canvas id="live-photo-canvas" style="display:none;"></canvas>
+            <button id="capture-btn" type="button">Capture Photo</button>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Contact us at support@onlinekyc.com</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    <script>
+        function display(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.container').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
